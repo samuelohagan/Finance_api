@@ -7,9 +7,9 @@ class StaticPagesController < ApplicationController
   	#check if user 
   	if !(parsed_url == nil)
   		params_url = CGI.parse(parsed_url)
-  		if (["amount", "api_key"] - params_url.keys).empty?
-  			@amount_to_invest = params_url["amount"]
-  			@api_key = params_url["api_key"]
+  		if (["amount", "time_period"] - params_url.keys).empty?
+  			@amount = params_url["amount"]
+  			@time_period = params_url["time_period"]
   			@valid_url = true
   		end
 
